@@ -27,7 +27,7 @@ renderer.toneMapping = THREE.CineonToneMapping;
 // const fxaaEffect = new FXAAEffect();\
 const smaaEffect = new SMAAEffect();
 const bloomEffect = new BloomEffect();
-const brightEffect = new BrightnessContrastEffect({ brightness: 0.1 });
+const brightEffect = new BrightnessContrastEffect({ brightness: 0.1, contrast: 0.1 });
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
@@ -65,7 +65,7 @@ scene.environment = envMap;
 const pointLight = new THREE.PointLight(0xffffff, 2);
 pointLight.position.set(20, 15, 5);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
 
 scene.add(pointLight, ambientLight);
 
